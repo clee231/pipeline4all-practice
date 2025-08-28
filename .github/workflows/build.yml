@@ -7,7 +7,7 @@ on:
       - main
   pull_request:
     branches:
-      - pipeline-example
+      - main
 jobs:
   build:
     runs-on: ubuntu-latest
