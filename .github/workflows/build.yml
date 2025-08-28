@@ -1,0 +1,40 @@
+---
+name: Build
+run-name: ${{ github.actor }} is learning GitHub Actions - ${{ github.sha }}
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - pipeline-example
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: ['24', '20']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+      - uses: oven-sh/setup-bun@v2
+
+      - name: Check running versions - Node
+        run: node --version
+
+      - name: Check running versions - Bun
+        run: bun --version
+
+      - name: Install project dependencies
+        run: bun install
+
+      - name: Build the project
+        run: bun run build
+
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist-${{ matrix.node-version }}
+          path: dist
