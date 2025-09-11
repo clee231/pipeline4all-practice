@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: practice-deploy
+  name: chase-deploy
   labels:
     app: nginx
 spec:
