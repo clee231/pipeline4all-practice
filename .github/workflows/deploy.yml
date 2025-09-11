@@ -17,7 +17,6 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Install kubectl
       - name: Get namespaces
         uses: actions-hub/kubectl@master
         env:
