@@ -15,7 +15,7 @@ spec:
         app: nginx
     spec:
       containers:
-      - name: my-app
-        image: ghcr.io/clee231/slalom-pipeline-practice-24:latest
-        ports:
-        - containerPort: 3000
+        - name: my-app
+          image: ghcr.io/clee231/slalom-pipeline-practice-24:latest
+          ports:
+            - containerPort: 3000
