@@ -43,6 +43,7 @@ jobs:
           name: dist-${{ matrix.node-version }}
           path: dist
   docker-build:
+    needs: build
     runs-on: ubuntu-latest
     strategy:
       matrix:
