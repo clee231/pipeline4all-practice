@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: ['24', '20']
+        node-version: ["24", "20"]
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -38,4 +38,3 @@ jobs:
         with:
           name: dist-${{ matrix.node-version }}
           path: dist
-
