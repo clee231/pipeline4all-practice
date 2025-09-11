@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
         - name: my-app
-          image: ghcr.io/clee231/slalom-pipeline-practice-24:latest
+          image: ghcr.io/clee231/pipeline4all-practice-24:latest
           ports:
             - containerPort: 3000
