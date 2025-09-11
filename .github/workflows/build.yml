@@ -75,6 +75,7 @@ jobs:
         uses: actions/download-artifact@v5
         with:
           name: dist-${{ matrix.node-version }}
+          path: dist
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3

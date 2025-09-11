@@ -1,5 +1,5 @@
 ---
-name: Build
+name: Lint
 run-name: ${{ github.actor }} is learning GitHub Actions - ${{ github.sha }}
 on: [push, pull_request]
 
