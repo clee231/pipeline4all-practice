@@ -1,0 +1,25 @@
+---
+name: Deploy
+run-name: ${{ github.actor }} is learning GitHub Actions - ${{ github.sha }}
+on:
+  push:
+    branches:
+      - main
+      - release/*
+  pull_request:
+    branches:
+      - main
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME: ${{ github.repository }}
+
+jobs:
+  deploy:
+    steps:
+      - name: Install kubectl
+      - name: Get namespaces
+        uses: actions-hub/kubectl@master
+        env:
+          KUBE_CONFIG: ${{ secrets.KUBECONFIG }}
+        with:
+          args: get namespace
