@@ -1,0 +1,20 @@
+---
+name: Build
+run-name: ${{ github.actor }} is learning GitHub Actions - ${{ github.sha }}
+on: [push, pull_request]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - uses: oven-sh/setup-bun@v2
+      - name: Install project dependencies
+        run: bun install
+      - name: Prettify Formatting Check
+        run: bun run fmt.check
+      - name: Lint Check
+        run: bun run lint
