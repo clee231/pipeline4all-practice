@@ -11,7 +11,7 @@ on:
       - main
 env:
   KUBE_CONFIG: ${{ secrets.KUBECONFIG }}
-  KUBE_CONFIG_PATH: "${GITHUB_WORKSPACE}/kubeconfig"
+  KUBE_CONFIG_PATH: "${{GITHUB_WORKSPACE}}/kubeconfig"
 
 jobs:
   deploy:
@@ -27,7 +27,7 @@ jobs:
 
       - name: Load KUBECONFIG
         run: |
-          echo "${{secrets.KUBECONFIG}}" > ${GITHUB_WORKSPACE}/kubeconfig
+          echo "${{secrets.KUBECONFIG}}" > ${{GITHUB_WORKSPACE}}/kubeconfig
           pwd
           ls -lah ${GITHUB_WORKSPACE}
           echo "KUBE_CONFIG_PATH"
