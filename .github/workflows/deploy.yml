@@ -11,7 +11,6 @@ on:
       - main
 env:
   KUBE_CONFIG: ${{ secrets.KUBECONFIG }}
-  KUBE_CONFIG_PATH: "${{GITHUB_WORKSPACE}}/kubeconfig"
 
 jobs:
   deploy:
@@ -21,13 +20,15 @@ jobs:
         working-directory: tofu
     permissions:
       pull-requests: write
+    env:
+      KUBE_CONFIG_PATH: "${GITHUB_WORKSPACE}/kubeconfig"
     steps:
       - uses: actions/checkout@v3
       - uses: opentofu/setup-opentofu@v1
 
       - name: Load KUBECONFIG
         run: |
-          echo "${{secrets.KUBECONFIG}}" > ${{GITHUB_WORKSPACE}}/kubeconfig
+          echo "${{secrets.KUBECONFIG}}" > ${GITHUB_WORKSPACE}/kubeconfig
           pwd
           ls -lah ${GITHUB_WORKSPACE}
           echo "KUBE_CONFIG_PATH"
