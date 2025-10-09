@@ -26,7 +26,7 @@ jobs:
       - uses: opentofu/setup-opentofu@v1
 
       - name: Load KUBECONFIG
-        run: echo "${{secrets.KUBECONFIG}} > kubeconfig"
+        run: echo "${{secrets.KUBECONFIG}}" > kubeconfig
 
       - name: OpenTofu fmt
         id: fmt
