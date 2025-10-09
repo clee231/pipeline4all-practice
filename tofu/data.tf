@@ -5,6 +5,6 @@ data "kubernetes_namespace" "example" {
 }
 
 output "namespace_uuid" {
- value = data.kubernetes_namespace.example.metadata[0].uid
+  value = data.kubernetes_namespace.example.metadata[0].uid
 }
 
