@@ -26,7 +26,10 @@ jobs:
       - uses: opentofu/setup-opentofu@v1
 
       - name: Load KUBECONFIG
-        run: echo "${{secrets.KUBECONFIG}}" > ${GITHUB_WORKSPACE}/kubeconfig
+        run: |
+          echo "${{secrets.KUBECONFIG}}" > ${GITHUB_WORKSPACE}/kubeconfig
+          pwd
+          ls -lah ${GITHUB_WORKSPACE}
 
       - name: OpenTofu fmt
         id: fmt
