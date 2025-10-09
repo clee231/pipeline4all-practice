@@ -1,6 +1,6 @@
 resource "kubernetes_service" "chase_service_demo" {
   metadata {
-    name = "${var.resource_prefix}-chase-service"
+    name      = "${var.resource_prefix}-chase-service"
     namespace = kubernetes_namespace.pipelines4all.metadata[0].name
   }
   spec {
