@@ -30,6 +30,8 @@ jobs:
           echo "${{secrets.KUBECONFIG}}" > ${GITHUB_WORKSPACE}/kubeconfig
           pwd
           ls -lah ${GITHUB_WORKSPACE}
+          echo "KUBE_CONFIG_PATH"
+          echo "$KUBE_CONFIG_PATH"
 
       - name: OpenTofu fmt
         id: fmt
