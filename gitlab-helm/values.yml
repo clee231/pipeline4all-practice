@@ -1,0 +1,6 @@
+---
+gitlabUrl: http://137.184.12.206
+rbac:
+  create: true
+# This token is not valid, but is here to exemplify what a runnerToken looks like.
+runnerToken: glrt-70A_fgUjS47cDNKIDTHOgW86MQp0OjEKdToxCw.01.121moewlww
