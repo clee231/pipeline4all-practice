@@ -21,7 +21,8 @@
     "lint": "eslint \"src/**/*.ts*\"",
     "preview": "qwik build preview && vite preview --open",
     "start": "vite --open --mode ssr",
-    "qwik": "qwik"
+    "qwik": "qwik",
+    "test": "echo 'Yup... I am totally running tests.'"
   },
   "devDependencies": {
     "@builder.io/qwik": "^1.16.0",
