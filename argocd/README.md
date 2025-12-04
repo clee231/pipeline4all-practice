@@ -1,0 +1,1 @@
+Place Kubernetes manifests here.
